@@ -1,0 +1,1086 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Elite | Mayela Engineering</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/site.css">
+    <style>
+        .contact-map {
+            height: 400px;
+            background: linear-gradient(135deg, #00796B, #009688);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .contact-feature {
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+            .contact-feature:hover {
+                transform: translateY(-5px);
+                border-color: var(--primary-teal);
+                box-shadow: var(--shadow-md);
+            }
+
+        .form-step {
+            display: none;
+        }
+
+            .form-step.active {
+                display: block;
+                animation: fadeIn 0.5s;
+            }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Form validation styles */
+        .form-control-premium.is-invalid {
+            border-color: #dc3545 !important;
+            box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25) !important;
+        }
+
+        .form-control-premium.is-valid {
+            border-color: #198754 !important;
+            box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25) !important;
+        }
+
+        .invalid-feedback {
+            display: block;
+            color: #dc3545;
+            font-size: 0.875em;
+            margin-top: 0.25rem;
+        }
+
+        .form-check-input.is-invalid {
+            border-color: #dc3545;
+        }
+
+        .form-check-input.is-valid {
+            border-color: #198754;
+        }
+
+        /* Progress indicator */
+        .progress-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+            .progress-indicator::before {
+                content: '';
+                position: absolute;
+                top: 20px;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background-color: #e9ecef;
+                z-index: 1;
+            }
+
+        .progress-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: 600;
+            color: #6c757d;
+            border: 3px solid white;
+        }
+
+        .progress-step.active .step-circle {
+            background-color: var(--primary-teal);
+            color: white;
+        }
+
+        .progress-step.completed .step-circle {
+            background-color: #198754;
+            color: white;
+        }
+
+        .step-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #6c757d;
+        }
+
+        .progress-step.active .step-label {
+            color: var(--primary-teal);
+        }
+
+        .progress-step.completed .step-label {
+            color: #198754;
+        }
+
+        /* Satellite animation */
+        .satellite-dot {
+            animation: orbit 10s linear infinite;
+        }
+
+        @keyframes orbit {
+            0% {
+                transform: rotate(0deg) translateX(20px) rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(20px) rotate(-360deg);
+            }
+        }
+
+        /* Emergency button */
+        .btn-premium-primary {
+            background: linear-gradient(135deg, #d32f2f, #f44336);
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+            .btn-premium-primary:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 20px rgba(244, 67, 54, 0.3);
+                color: white;
+            }
+    </style>
+</head>
+<body>
+    <!-- Premium Emergency Banner with Animation -->
+    <div class="emergency-banner animate__animated animate__fadeInDown">
+        <div class="container">
+            <i class="fas fa-exclamation-triangle me-2"></i>
+            <span class="me-3">24/7 EMERGENCY SERVICE:</span>
+            <a href="tel:0781552165" class="emergency-phone">
+                <i class="fas fa-phone me-1"></i> 078 155 2165
+            </a>
+            <span class="ms-3 badge-hot">
+                <i class="fas fa-fire me-1"></i> HOTLINE
+            </span>
+        </div>
+    </div>
+
+    <!-- Premium Navigation - With Logo -->
+    <nav class="navbar navbar-expand-lg premium-nav">
+        <div class="container">
+            <!-- Logo with Image -->
+            <a class="navbar-brand navbar-brand-premium" href="/">
+                <div class="logo-container">
+                    <div class="logo-image">
+                        <img src="images/IMG-20251218-WA0006.jpg" alt="Mayela Plumbing & Electrical Logo" class="logo-img">
+                        <div class="logo-overlay">
+                            <span class="footer-logo">MAYELA</span>
+                            <span class="logo-text-sub">PLUMBING & ELECTRICAL</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Enhanced Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#premiumNav">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+
+            <!-- Enhanced Navigation Menu -->
+            <div class="collapse navbar-collapse" id="premiumNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-premium" href="/">
+                            <i class="fas fa-home me-2"></i>HOME
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-premium" href="/borehole-services.html">
+                            <i class="fas fa-water me-2"></i>BOREHOLE
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-premium" href="/services.html">
+                            <i class="fas fa-cogs me-2"></i>SERVICES
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-premium" href="/about.html">
+                            <i class="fas fa-users me-2"></i>ABOUT US
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-premium active" href="/contact.html">
+                            <i class="fas fa-envelope me-2"></i>CONTACT
+                        </a>
+                    </li>
+                    <li class="nav-item ms-3 d-none d-lg-block">
+                        <a href="tel:0781552165" class="btn btn-premium pulse-animation">
+                            <i class="fas fa-phone-alt me-2"></i> CALL NOW
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Quick Contact Info in Navbar -->
+                <div class="navbar-contact d-lg-none mt-3">
+                    <div class="d-flex justify-content-center">
+                        <a href="tel:0781552165" class="btn btn-premium btn-sm">
+                            <i class="fas fa-phone me-2"></i> 078 155 2165
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animated Underline -->
+        <div class="nav-underline"></div>
+    </nav>
+
+    <!-- Premium Contact Hero -->
+    <section class="premium-hero" style="background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)),
+                url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <h1 class="hero-title">ENGINEERING CONSULTATION</h1>
+                <p class="hero-subtitle">
+                    Connect with our elite engineering team for premium commercial solutions.
+                    Expert consultation, precise assessments, and engineered results.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Inquiry Form -->
+    <section id="project-form" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2 class="section-title">PROJECT INQUIRY FORM</h2>
+                <p class="section-subtitle">Detailed assessment for premium engineering solutions</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <form class="premium-form fade-in-up"
+                          action="https://formspree.io/f/xojjqkpr"
+                          method="POST"
+                          id="inquiry-form">
+
+                        <!-- Hidden field for Formspree -->
+                        <input type="hidden" name="_subject" value="New Project Inquiry - Mayela Engineering">
+                        <input type="hidden" name="_replyto" id="reply-to-email">
+
+                        <!-- Form Progress Indicator (Simplified) -->
+                        <div class="mb-5 text-center">
+                            <div class="d-inline-flex align-items-center">
+                                <span class="badge bg-primary-teal rounded-circle p-2 mx-2">1</span>
+                                <span class="text-muted mx-1">————</span>
+                                <span class="badge bg-secondary rounded-circle p-2 mx-2">2</span>
+                                <span class="text-muted mx-1">————</span>
+                                <span class="badge bg-secondary rounded-circle p-2 mx-2">3</span>
+                            </div>
+                            <div class="mt-2">
+                                <small class="text-primary-teal">Project Details</small>
+                                <small class="text-muted mx-3">Contact Info</small>
+                                <small class="text-muted mx-3">Review & Submit</small>
+                            </div>
+                        </div>
+
+                        <!-- Step 1 -->
+                        <div class="form-step active" id="step1">
+                            <div class="premium-card p-4">
+                                <h4 class="mb-4 text-primary-teal">Project Specifications</h4>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold" for="service_required">Service Required *</label>
+                                        <select name="service_required" id="service_required" class="form-select form-control-premium" required>
+                                            <option value="">Select service type</option>
+                                            <option value="Commercial Plumbing">Commercial Plumbing</option>
+                                            <option value="Electrical Systems">Electrical Systems</option>
+                                            <option value="Plumbing & Electrical">Plumbing & Electrical</option>
+                                            <option value="Emergency Service">Emergency Service</option>
+                                            <option value="Engineering Consultation">Engineering Consultation</option>
+                                        </select>
+                                        <div class="invalid-feedback">Please select a service type.</div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold" for="project_scale">Project Scale *</label>
+                                        <select name="project_scale" id="project_scale" class="form-select form-control-premium" required>
+                                            <option value="">Select project scale</option>
+                                            <option value="Small Project (< R30,000)">Small Project (&lt; R30,000)</option>
+                                            <option value="Medium Project (R30,000 - R50,000)">Medium Project (R30,000 - R50,000)</option>
+                                            <option value="Large Project (R50, 000 - R100, 000)">Large Project (50,000 - R100, 000)</option>
+                                            <option value="Enterprise (> R100, 000)">Enterprise (&gt; R100, 000)</option>
+                                        </select>
+                                        <div class="invalid-feedback">Please select project scale.</div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold" for="property_type">Property Type *</label>
+                                        <select name="property_type" id="property_type" class="form-select form-control-premium" required>
+                                            <option value="">Select property type</option>
+                                            <option value="Commercial Building">Commercial Building</option>
+                                            <option value="Industrial Facility">Industrial Facility</option>
+                                            <option value="Residential Complex">Residential Complex</option>
+                                            <option value="Retail Space">Retail Space</option>
+                                            <option value="Hospitality Establishment">Hospitality Establishment</option>
+                                        </select>
+                                        <div class="invalid-feedback">Please select property type.</div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold" for="urgency_level">Urgency Level *</label>
+                                        <select name="urgency_level" id="urgency_level" class="form-select form-control-premium" required>
+                                            <option value="">Select urgency</option>
+                                            <option value="Planning Phase (3+ months)">Planning Phase (3+ months)</option>
+                                            <option value="Scheduled Project (1-3 months)">Scheduled Project (1-3 months)</option>
+                                            <option value="Urgent (2-4 weeks)">Urgent (2-4 weeks)</option>
+                                            <option value="Emergency (24-48 hours)">Emergency (24-48 hours)</option>
+                                        </select>
+                                        <div class="invalid-feedback">Please select urgency level.</div>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label class="form-label fw-bold" for="project_description">Project Description *</label>
+                                        <textarea name="project_description" id="project_description" class="form-control form-control-premium" rows="4" placeholder="Describe your project requirements, challenges, and desired outcomes..." required></textarea>
+                                        <div class="invalid-feedback">Please describe your project.</div>
+                                        <small class="form-text text-muted">Please provide as much detail as possible for accurate assessment.</small>
+                                    </div>
+                                </div>
+                                <div class="text-end">
+                                    <button type="button" class="btn btn-premium" onclick="validateStep(1)">
+                                        Continue to Contact Info <i class="fas fa-arrow-right ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="form-step" id="step2">
+                            <div class="premium-card p-4">
+                                <h4 class="mb-4 text-primary-teal">Contact Information</h4>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold" for="full_name">Full Name *</label>
+                                        <input type="text" id="full_name" name="full_name" class="form-control form-control-premium" required />
+                                        <div class="invalid-feedback">Please enter your full name.</div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold" for="company_name">Company Name</label>
+                                        <input type="text" id="company_name" name="company_name" class="form-control form-control-premium" />
+                                        <small class="form-text text-muted">Optional - if applicable</small>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold" for="email_address">Email Address *</label>
+                                        <input type="email" id="email_address" name="email_address" class="form-control form-control-premium" required />
+                                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold" for="phone_number">Phone Number *</label>
+                                        <input type="tel" id="phone_number" name="phone_number" class="form-control form-control-premium" placeholder="078 155 2165" required />
+                                        <div class="invalid-feedback">Please enter a valid 10-digit South African phone number.</div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold" for="preferred_contact_method">Preferred Contact Method</label>
+                                        <select name="preferred_contact_method" id="preferred_contact_method" class="form-select form-control-premium">
+                                            <option value="Phone Call">Phone Call</option>
+                                            <option value="Email">Email</option>
+                                            <option value="WhatsApp">WhatsApp</option>
+                                            <option value="All Methods">All Methods</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold" for="best_contact_time">Best Contact Time</label>
+                                        <select name="best_contact_time" id="best_contact_time" class="form-select form-control-premium">
+                                            <option value="Morning (8AM - 12PM)">Morning (8AM - 12PM)</option>
+                                            <option value="Afternoon (12PM - 4PM)">Afternoon (12PM - 4PM)</option>
+                                            <option value="Evening (4PM - 6PM)">Evening (4PM - 6PM)</option>
+                                            <option value="Flexible">Flexible</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <button type="button" class="btn btn-outline-primary-teal" onclick="goToStep(1)">
+                                        <i class="fas fa-arrow-left me-2"></i> Back to Project Details
+                                    </button>
+                                    <button type="button" class="btn btn-premium" onclick="validateStep(2)">
+                                        Review & Submit <i class="fas fa-arrow-right ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="form-step" id="step3">
+                            <div class="premium-card p-4">
+                                <h4 class="mb-4 text-primary-teal">Review & Submit</h4>
+                                <div class="premium-highlight mb-4">
+                                    <h5 class="mb-3">Submission Summary</h5>
+                                    <div id="review-summary"></div>
+                                </div>
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" id="terms" required />
+                                    <label class="form-check-label" for="terms">
+                                        I agree to receive a detailed engineering assessment and quote from Mayela Engineering.
+                                        I understand that this inquiry will be reviewed by our engineering team within 24 hours.
+                                    </label>
+                                    <div class="invalid-feedback">You must agree to the terms before submitting.</div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <button type="button" class="btn btn-outline-primary-teal" onclick="goToStep(2)">
+                                        <i class="fas fa-arrow-left me-2"></i> Back to Contact Info
+                                    </button>
+                                    <button type="submit" class="btn btn-premium">
+                                        <i class="fas fa-paper-plane me-2"></i> SUBMIT INQUIRY
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Success Message (hidden by default) -->
+                        <div class="form-step" id="success-message">
+                            <div class="premium-card p-5 text-center">
+                                <div class="premium-icon mx-auto mb-4" style="background: linear-gradient(135deg, #4CAF50, #2E7D32);">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <h3 class="h2 mb-3 text-primary-teal">Inquiry Submitted Successfully!</h3>
+                                <p class="lead mb-4">
+                                    Thank you for your detailed inquiry. Our engineering team will review
+                                    your requirements and contact you within 24 hours with a comprehensive
+                                    assessment.
+                                </p>
+                                <div class="d-flex justify-content-center gap-3">
+                                    <a href="/" class="btn btn-premium">
+                                        <i class="fas fa-home me-2"></i> Return Home
+                                    </a>
+                                    <a href="/services.html" class="btn btn-outline-primary-teal">
+                                        <i class="fas fa-tools me-2"></i> View Services
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Channels -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2 class="section-title">MULTI-CHANNEL CONNECTIVITY</h2>
+                <p class="section-subtitle">Multiple ways to engage with our engineering team</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="premium-card text-center p-5 contact-feature fade-in-up">
+                        <div class="premium-icon mx-auto mb-4">
+                            <i class="fas fa-phone-volume"></i>
+                        </div>
+                        <h4 class="h4 mb-3">Direct Contact</h4>
+                        <p class="text-muted mb-4">Speak directly with our engineering team</p>
+                        <a href="tel:0781552165" class="btn btn-premium">
+                            <i class="fas fa-phone me-2"></i> 078 155 2165
+                        </a>
+                        <div class="mt-3">
+                            <small class="text-muted">24/7 Emergency Line Available</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="premium-card text-center p-5 contact-feature fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="premium-icon mx-auto mb-4" style="background: linear-gradient(135deg, #FFD700, #FFA000);">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <h4 class="h4 mb-3">Professional Email</h4>
+                        <p class="text-muted mb-4">Send detailed project specifications</p>
+                        <a href="mailto:xolanymayela5@gmail.com" class="btn btn-premium">
+                            <i class="fas fa-envelope me-2"></i> EMAIL US
+                        </a>
+                        <div class="mt-3">
+                            <small class="text-muted">Response within 24 hours</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="premium-card text-center p-5 contact-feature fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="premium-icon mx-auto mb-4" style="background: linear-gradient(135deg, #4CAF50, #2E7D32);">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <h4 class="h4 mb-3">Project Inquiry</h4>
+                        <p class="text-muted mb-4">Submit detailed project requirements</p>
+                        <a href="#project-form" class="btn btn-premium" onclick="resetForm()">
+                            <i class="fas fa-pen me-2"></i> START FORM
+                        </a>
+                        <div class="mt-3">
+                            <small class="text-muted">Comprehensive assessment</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Hours -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="contact-map fade-in-up">
+                        <!-- Embedded Map -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3445.847168941887!2d29.889188975872797!3d-30.574035901940666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef6a1e2e6c0c4c1%3A0xd3c5b5b5b5b5b5b5!2sKwaMachi%2C%20Harding%2C%204680!5e0!3m2!1sen!2sza!4v1700000000000!5m2!1sen!2sza"
+                                style="border:0; width:100%; height:100%; min-height: 450px;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="premium-highlight fade-in-up" style="animation-delay: 0.3s;">
+                        <h3 class="h2 mb-4 text-primary-teal"><i class="fas fa-building me-2"></i>Engineering Headquarters</h3>
+
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex align-items-start">
+                                    <div class="me-3 mt-1">
+                                        <i class="fas fa-map-marker-alt text-primary-teal fa-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-3 fw-bold">Address</h5>
+                                        <address class="mb-0" style="line-height: 1.6;">
+                                            Marburg<br>
+                                            Port Shepstone 4252<br>
+                                            KwaZulu-Natal, South Africa
+                                        </address>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex align-items-start">
+                                    <div class="me-3 mt-1">
+                                        <i class="fas fa-clock text-primary-teal fa-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-3 fw-bold">Operating Hours</h5>
+                                        <div style="line-height: 1.6;">
+                                            <div class="mb-1">
+                                                <strong>Mon-Fri:</strong> 8:00 AM - 6:00 PM
+                                            </div>
+                                            <div class="mb-1">
+                                                <strong>Saturday:</strong> 9:00 AM - 2:00 PM
+                                            </div>
+                                            <div class="mb-1">
+                                                <strong class="text-warning">Emergency:</strong> 24/7
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-top pt-4">
+                            <h4 class="mb-4"><i class="fas fa-headset text-primary-teal me-2"></i>Contact Channels</h4>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="d-flex align-items-center h-100">
+                                        <div class="contact-icon-wrapper me-3">
+                                            <div class="premium-icon d-flex align-items-center justify-content-center"
+                                                 style="width: 60px; height: 60px; background: linear-gradient(135deg, #ff6b6b, #ff4757);">
+                                                <i class="fas fa-phone-volume"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-2 fw-bold">Emergency Line</h6>
+                                            <a href="tel:0781552165" class="contact-link text-decoration-none d-block fs-5 fw-bold">
+                                                078 155 2165
+                                            </a>
+                                            <small class="text-muted d-block">Available 24/7</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="d-flex align-items-center h-100">
+                                        <div class="contact-icon-wrapper me-3">
+                                            <div class="premium-icon d-flex align-items-center justify-content-center"
+                                                 style="width: 60px; height: 60px; background: linear-gradient(135deg, #007bff, #0056b3);">
+                                                <i class="fas fa-envelope fa-lg text-white"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-2 fw-bold">Engineering Email</h6>
+                                            <a href="mailto:xolanymayela5@gmail.com" class="contact-link text-decoration-none d-block fs-6">
+                                                xolanymayela5@gmail.com
+                                            </a>
+                                            <small class="text-muted d-block">Primary contact for quotes</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-warning mt-3" role="alert">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-exclamation-triangle me-3 fa-lg"></i>
+                                    <div>
+                                        <strong>Emergency Services:</strong> Call our emergency line for immediate assistance with urgent plumbing or electrical issues.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Footer -->
+    <footer class="premium-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5">
+                    <h3 class="footer-brand mb-4">MAYELA</h3>
+                    <p class="opacity-80">
+                        Engineering excellence in plumbing and electrical systems.
+                        Commercial specialists since 2008.
+                    </p>
+                    <div class="mt-4">
+                        <a href="#" class="btn btn-outline-light btn-sm me-2">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm me-2">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-5">
+                    <h5 class="text-white mb-4">CONTACT INFORMATION</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2">
+                            <i class="fas fa-phone me-2 text-primary-teal"></i>
+                            <a href="tel:0781552165" class="text-white">078 155 2165</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-envelope me-2 text-primary-teal"></i>
+                            <a href="mailto:xolanymayela5@gmail.com" class="text-white">xolanymayela5@gmail.com</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-map-marker-alt me-2 text-primary-teal"></i>
+                            Marburg, Port Shepstone 4252
+                        </li>
+                        <li>
+                            <i class="fas fa-clock me-2 text-primary-teal"></i>
+                            24/7 Emergency Service Available
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 mb-5">
+                    <h5 class="text-white mb-4">SERVICE AREAS</h5>
+                    <div class="bg-dark p-4 rounded">
+                        <p class="mb-2">
+                            <i class="fas fa-check-circle me-2 text-primary-teal"></i>
+                            KwaMachi Harding Region
+                        </p>
+                        <p class="mb-2">
+                            <i class="fas fa-check-circle me-2 text-primary-teal"></i>
+                            KwaZulu-Natal Province
+                        </p>
+                        <p class="mb-2">
+                            <i class="fas fa-check-circle me-2 text-primary-teal"></i>
+                            Commercial Projects Nationwide
+                        </p>
+                        <p class="mb-0">
+                            <i class="fas fa-check-circle me-2 text-primary-teal"></i>
+                            Emergency Services 24/7
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="opacity-25">
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <p class="mb-0 opacity-75">
+                        &copy; 2024 Mayela Plumbing & Electrical. All rights reserved.
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0 opacity-75">
+                        Engineering Excellence | SABS Certified | 1-Year Warranty
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Form Submission Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <div class="premium-icon mx-auto mb-4" style="background: linear-gradient(135deg, #4CAF50, #2E7D32);">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h4 class="modal-title mb-3" id="successModalLabel">Inquiry Submitted Successfully!</h4>
+                    <p class="mb-4">
+                        Thank you for your detailed inquiry. Our engineering team will review
+                        your requirements and contact you within 24 hours with a comprehensive
+                        assessment.
+                    </p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="/" class="btn btn-premium">
+                            <i class="fas fa-home me-2"></i> Return Home
+                        </a>
+                        <a href="/services.html" class="btn btn-outline-primary-teal">
+                            <i class="fas fa-tools me-2"></i> View Services
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/site.js"></script>
+    <script>
+        // Multi-step form functionality
+        let currentStep = 1;
+
+        // Initialize form
+        document.addEventListener('DOMContentLoaded', function () {
+            updateProgressIndicators();
+            setupFormValidation();
+            setupFormspreeSubmission();
+        });
+
+        function setupFormspreeSubmission() {
+            const form = document.getElementById('inquiry-form');
+
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                // Validate terms agreement
+                const terms = document.getElementById('terms');
+                if (!terms.checked) {
+                    terms.classList.add('is-invalid');
+                    terms.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    alert('Please agree to the terms before submitting.');
+                    return;
+                }
+
+                // Show loading state
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> SUBMITTING...';
+                submitBtn.disabled = true;
+
+                // Add timestamp
+                const timestampField = document.createElement('input');
+                timestampField.type = 'hidden';
+                timestampField.name = 'submission_timestamp';
+                timestampField.value = new Date().toISOString();
+                this.appendChild(timestampField);
+
+                try {
+                    // Submit the form to Formspree
+                    const response = await fetch(this.action, {
+                        method: 'POST',
+                        body: new FormData(this),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        // Hide current step
+                        document.getElementById('step3').classList.remove('active');
+
+                        // Show success message
+                        document.getElementById('success-message').classList.add('active');
+
+                        // Scroll to success message
+                        document.getElementById('success-message').scrollIntoView({ behavior: 'smooth' });
+
+                        // Reset form after 5 seconds
+                        setTimeout(resetForm, 5000);
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } catch (error) {
+                    console.error('Form submission error:', error);
+
+                    // Reset button state
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+
+                    // Remove timestamp field
+                    if (timestampField.parentNode) {
+                        timestampField.parentNode.removeChild(timestampField);
+                    }
+
+                    // Show error message
+                    alert('There was an error submitting your form. Please try again or contact us directly.');
+                }
+            });
+        }
+
+        function setupFormValidation() {
+            // Add real-time validation on blur
+            const formFields = document.querySelectorAll('#inquiry-form [required]');
+            formFields.forEach(field => {
+                field.addEventListener('blur', function () {
+                    validateField(this);
+                });
+
+                // Clear validation when user starts typing
+                field.addEventListener('input', function () {
+                    this.classList.remove('is-invalid', 'is-valid');
+                    const feedback = this.nextElementSibling;
+                    if (feedback && feedback.classList.contains('invalid-feedback')) {
+                        feedback.textContent = '';
+                    }
+                });
+            });
+
+            // Phone number formatting
+            const phoneField = document.getElementById('phone_number');
+            if (phoneField) {
+                phoneField.addEventListener('input', function (e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    if (value.length > 10) value = value.substring(0, 10);
+
+                    // Format as 078 155 2165
+                    if (value.length > 6) {
+                        value = value.substring(0, 3) + ' ' + value.substring(3, 6) + ' ' + value.substring(6);
+                    } else if (value.length > 3) {
+                        value = value.substring(0, 3) + ' ' + value.substring(3);
+                    }
+                    e.target.value = value;
+                });
+            }
+        }
+
+        function validateField(field) {
+            field.classList.remove('is-invalid', 'is-valid');
+
+            // Check if field is empty
+            if (!field.value.trim()) {
+                field.classList.add('is-invalid');
+                return false;
+            }
+
+            // Email validation
+            if (field.type === 'email') {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(field.value)) {
+                    field.classList.add('is-invalid');
+                    const feedback = field.nextElementSibling;
+                    if (feedback && feedback.classList.contains('invalid-feedback')) {
+                        feedback.textContent = 'Please enter a valid email address';
+                    }
+                    return false;
+                }
+            }
+
+            // Phone validation (South African format)
+            if (field.id === 'phone_number') {
+                const cleanedPhone = field.value.replace(/\D/g, '');
+                if (cleanedPhone.length !== 10) {
+                    field.classList.add('is-invalid');
+                    const feedback = field.nextElementSibling;
+                    if (feedback && feedback.classList.contains('invalid-feedback')) {
+                        feedback.textContent = 'Please enter a valid 10-digit South African phone number';
+                    }
+                    return false;
+                }
+            }
+
+            field.classList.add('is-valid');
+            return true;
+        }
+
+        function validateStep(step) {
+            const stepElement = document.getElementById('step' + step);
+            const requiredFields = stepElement.querySelectorAll('[required]');
+            let isValid = true;
+
+            requiredFields.forEach(field => {
+                if (!validateField(field)) {
+                    isValid = false;
+                }
+            });
+
+            if (isValid) {
+                if (step === 1) {
+                    goToStep(2);
+                } else if (step === 2) {
+                    // Set reply-to email for Formspree
+                    const emailField = document.getElementById('email_address');
+                    if (emailField) {
+                        document.getElementById('reply-to-email').value = emailField.value;
+                    }
+                    updateReviewSummary();
+                    goToStep(3);
+                }
+            } else {
+                // Scroll to first invalid field
+                const firstInvalid = stepElement.querySelector('.is-invalid');
+                if (firstInvalid) {
+                    firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    firstInvalid.focus();
+                }
+            }
+
+            return isValid;
+        }
+
+        function goToStep(step) {
+            // Hide all steps
+            document.querySelectorAll('.form-step').forEach(stepEl => {
+                stepEl.classList.remove('active');
+            });
+
+            // Show new step
+            document.getElementById('step' + step).classList.add('active');
+
+            // Update current step
+            currentStep = step;
+
+            // Update progress indicators
+            updateProgressIndicators();
+
+            // Scroll to top of form
+            document.getElementById('project-form').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function updateProgressIndicators() {
+            // Update the simple progress indicators
+            const badges = document.querySelectorAll('.progress-indicator .badge');
+            badges.forEach((badge, index) => {
+                if (index + 1 < currentStep) {
+                    badge.classList.remove('bg-secondary', 'bg-primary-teal');
+                    badge.classList.add('bg-success');
+                } else if (index + 1 === currentStep) {
+                    badge.classList.remove('bg-secondary', 'bg-success');
+                    badge.classList.add('bg-primary-teal');
+                } else {
+                    badge.classList.remove('bg-primary-teal', 'bg-success');
+                    badge.classList.add('bg-secondary');
+                }
+            });
+
+            // Update the text labels
+            const labels = document.querySelectorAll('.progress-indicator small');
+            labels.forEach((label, index) => {
+                if (index + 1 < currentStep) {
+                    label.classList.remove('text-muted', 'text-primary-teal');
+                    label.classList.add('text-success');
+                } else if (index + 1 === currentStep) {
+                    label.classList.remove('text-muted', 'text-success');
+                    label.classList.add('text-primary-teal');
+                } else {
+                    label.classList.remove('text-primary-teal', 'text-success');
+                    label.classList.add('text-muted');
+                }
+            });
+        }
+
+        function updateReviewSummary() {
+            const form = document.getElementById('inquiry-form');
+            const summary = document.getElementById('review-summary');
+
+            // Get all form values
+            const service = form.querySelector('[name="service_required"]').value;
+            const scale = form.querySelector('[name="project_scale"]').value;
+            const property = form.querySelector('[name="property_type"]').value;
+            const urgency = form.querySelector('[name="urgency_level"]').value;
+            const description = form.querySelector('[name="project_description"]').value;
+            const name = form.querySelector('[name="full_name"]').value;
+            const company = form.querySelector('[name="company_name"]').value || 'Not provided';
+            const email = form.querySelector('[name="email_address"]').value;
+            const phone = form.querySelector('[name="phone_number"]').value;
+            const contactMethod = form.querySelector('[name="preferred_contact_method"]').value;
+            const contactTime = form.querySelector('[name="best_contact_time"]').value;
+
+            summary.innerHTML = `
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <h6 class="text-primary-teal">Project Details</h6>
+                                <p class="mb-2"><strong>Service:</strong><br>${service}</p>
+                                <p class="mb-2"><strong>Scale:</strong><br>${scale}</p>
+                                <p class="mb-2"><strong>Property Type:</strong><br>${property}</p>
+                                <p class="mb-2"><strong>Urgency:</strong><br>${urgency}</p>
+                                <p class="mb-0"><strong>Description:</strong><br>${description.substring(0, 100)}${description.length > 100 ? '...' : ''}</p>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <h6 class="text-primary-teal">Contact Information</h6>
+                                <p class="mb-2"><strong>Name:</strong><br>${name}</p>
+                                <p class="mb-2"><strong>Company:</strong><br>${company}</p>
+                                <p class="mb-2"><strong>Email:</strong><br>${email}</p>
+                                <p class="mb-2"><strong>Phone:</strong><br>${phone}</p>
+                                <p class="mb-2"><strong>Preferred Contact:</strong><br>${contactMethod}</p>
+                                <p class="mb-0"><strong>Best Time:</strong><br>${contactTime}</p>
+                            </div>
+                        </div>
+                    `;
+        }
+
+        function resetForm() {
+            // Reset form fields
+            const form = document.getElementById('inquiry-form');
+            form.reset();
+
+            // Reset validation states
+            form.querySelectorAll('.form-control-premium').forEach(field => {
+                field.classList.remove('is-invalid', 'is-valid');
+            });
+
+            // Reset terms checkbox
+            const terms = document.getElementById('terms');
+            if (terms) {
+                terms.checked = false;
+                terms.classList.remove('is-invalid', 'is-valid');
+            }
+
+            // Hide success message and show step 1
+            document.getElementById('success-message').classList.remove('active');
+            goToStep(1);
+
+            // Scroll to form
+            document.getElementById('project-form').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
